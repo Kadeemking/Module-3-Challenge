@@ -9,9 +9,18 @@ const collectEmployees = function() {
   const lastName=prompt("What is the Last Name of the employee");
   const salary=prompt("What is the Salary of the employee");
 
+  console.log(`firstName: ${firstName}
+    lastName: ${lastName}
+    salary: ${salary}
+    `)
 
+    const newEmployee={
+      firstName,
+      lastName,
+      salary,
+    }
 
-
+    employees.push(newEmployee);
 
   return employees;
 }
