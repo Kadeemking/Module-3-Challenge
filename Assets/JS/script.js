@@ -21,6 +21,8 @@ const collectEmployees = function() {
     }
 
     employees.push(newEmployee);
+    // Confirmation to proceed to next employee or stop adding employees
+    const isContinue=confirm("Do you want to continue or cancel?")
 
   return employees;
 }
