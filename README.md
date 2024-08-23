@@ -4,9 +4,13 @@
 
 For this Challenge i was given a starter code of a website that tracks employee's pay. The starter code had incomplete javascript, and i had to complete it in order to get the website to properly function. At the beginning the website did nothing when a user tried to click "Add Employees." I was able to:
 
-- 
-- 
-- 
+- Create a while function to add prompts asking for the user name and salary.
+- Add a prompt asking if the user wants to continue adding more or cancel if done.
+- Used the while loop to start again when continue is selected.
+- Display table of employees name and salaries that were inputted.
+- Create a function to calculate the average of the salaries out of all employees.
+- Create a funtion to randomly select an employee listed.
+
 
 ## Table of Contents
 
