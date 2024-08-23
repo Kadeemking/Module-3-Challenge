@@ -4,29 +4,31 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 // Collect employee data
 const collectEmployees = function () {
   const employees = [];
+
   // TODO: Get user input to create and return an array of employee objects
-  let proceed = true
-  while (proceed) {}
   // Created Prompts to ask for user input
-  const firstName = prompt("What is the First Name of the employee");
-  const lastName = prompt("What is the Last Name of the employee");
-  const salary = prompt("What is the Salary of the employee");
+  let proceed = true
+  while (proceed) {
+    const firstName = prompt("What is the First Name of the employee");
+    const lastName = prompt("What is the Last Name of the employee");
+    const salary = parseFloat(prompt("What is the Salary of the employee"));
   // logging the prompts in the console
-  console.log(`firstName: ${firstName}
+    console.log(`firstName: ${firstName}
     lastName: ${lastName}
     salary: ${salary}
     `)
-  const newEmployee = {
-    firstName,
-    lastName,
-    salary,
-  }
-  employees.push(newEmployee);
-  // Confirmation to proceed to next employee or stop adding employees
-  const isContinue = confirm("Do you want to continue or cancel?")
+    const newEmployee = {
+      firstName,
+      lastName,
+      salary,
+    }
+    employees.push(newEmployee);
+    // Confirmation to proceed to next employee or stop adding employees
+    const isContinue = confirm("Do you want to continue or cancel?")
 
-  if (isContinue === false) {
-    proceed = false;
+    if (isContinue === false) {
+      proceed = false;
+    }
   }
 
   return employees;
@@ -35,14 +37,22 @@ const collectEmployees = function () {
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
   // TODO: Calculate and display the average salary
-  
+  let totalSalary = 0;
+  for(let i=0; i< employeesArray.length; i++){
+    totalSalary= totalSalary + employeesArray[i].salary;
+  }
+  const totalEmployees= employeesArray.length
+  const avgSalary= totalSalary / totalEmployees;
+  console.log(`The average employee salary between our ${employeesArray.length} Employee(s) is ${avgSalary.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD"
+  })}`);
 }
 
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {
   // TODO: Select and display a random employee
-  const randomIndex= math.floor(Math.random()*employeesArray.length)
-  console.log(randomIndex)
+  const randomIndex = Math.floor(Math.random() * employeesArray.length)
   console.log(`Congratulations to ${employeesArray[randomIndex].firstName} ${employeesArray[randomIndex].lastName}, our random drawing`)
 }
 
